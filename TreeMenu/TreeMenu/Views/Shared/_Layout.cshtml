@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="@CultureInfo.CurrentUICulture.ToString()" data-ng-app="app" ng-strict-di>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <base href="@Url.Content("~")" />
+    <title>@ViewBag.Title</title>
+    <!-- IE refuses to show material icons without this.... .-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    @Styles.Render("~/Content/css")
+</head>
+<body data-ng-cloak>
+    @Html.Partial("_SideNavigation")
+    <route-loading-indicator></route-loading-indicator>
+    <div class="main-content" ui-view="main">
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/app")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

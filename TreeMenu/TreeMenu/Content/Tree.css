@@ -1,0 +1,24 @@
+﻿.tree-node {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+ul.tree-node {
+    list-style: none;
+}
+
+li.tree-node {
+    padding-left: 20px;
+}
+
+    li.tree-node .expanded {
+    }
+
+    li.tree-node .collapsed {
+    }
+
+    li.tree-node .no-children {
+        padding-right: 25px;
+    }

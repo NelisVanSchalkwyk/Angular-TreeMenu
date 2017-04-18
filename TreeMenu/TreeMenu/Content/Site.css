@@ -1,0 +1,46 @@
+﻿html, body {
+    font-family: 'Myriad Pro', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #5E5E5E;
+    background-color: #fff;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+[ng\:cloak], [ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
+}
+
+:focus {
+    outline: none;
+}
+
+.main-content {
+    margin-left: 25%;
+    padding: 5px;
+}
+
+.menu {
+    float: left;
+    width: 25%;
+    height: 100%;
+    border-right: 1px solid #999;
+}
+
+.menu-container {
+    height: 50%;
+    overflow: auto;
+    padding: 5px;
+    overflow: auto;
+}
+
+    .menu-container:first-of-type {
+        border-bottom: 1px solid #999;
+    }

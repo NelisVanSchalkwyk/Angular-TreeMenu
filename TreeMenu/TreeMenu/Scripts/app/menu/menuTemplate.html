@@ -1,0 +1,9 @@
+﻿<ul class="tree-node">
+    <li class="tree-node" data-ng-repeat="node in nodes track by $index" data-ng-click="nodeClicked({nodeItem: node})">
+        <i class="fa fa-plus-square-o fa-fw collapsed" aria-hidden="true" data-ng-show="node.Nodes.length > 0 && !node.expanded" data-ng-click="toggle(node, $event)"></i>
+        <i class="fa fa-minus-square-o fa-fw expanded" aria-hidden="true" data-ng-show="node.Nodes.length > 0 && node.expanded" data-ng-click="toggle(node, $event)"></i>
+        <i class="no-children" aria-hidden="true" data-ng-hide="node.Nodes.length > 0"></i>
+        {{::node.Name}}
+        <menu-tree data-ng-if="node.Nodes && node.Nodes.length > 0" data-ng-hide="!node.expanded" data-nodes="node.Nodes"></menu-tree>
+</li>
+</ul>

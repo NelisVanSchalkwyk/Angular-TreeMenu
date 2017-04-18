@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <menuItem>
+    <id>1</id>
+    <name>Menu Item 1</name>
+    <parentId></parentId>
+    <route></route>
+  </menuItem>
+  <menuItem>
+    <id>2</id>
+    <name>Menu Item 2</name>
+    <parentId></parentId>
+    <route></route>
+  </menuItem>
+  <menuItem>
+    <id>3</id>
+    <name>Menu Item 3</name>
+    <parentId>2</parentId>
+    <route></route>
+  </menuItem>
+</root>

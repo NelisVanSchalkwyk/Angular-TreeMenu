@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menuItems>
+  <menuItem name="Menu Item 1" route="">
+    <menuItem name="Menu Item 3" route="">
+      <menuItem name="Menu Item 4" route=""/>
+    </menuItem>
+  </menuItem>
+  <menuItem name="Menu Item 2" route=""/>
+</menuItems>
