@@ -1,6 +1,8 @@
 ﻿<div class="menu" data-ng-controller="MenuController as menu">
     <div class="menu-container">
-        <menu-tree data-nodes="menu.primaryMenu" data-selected-node-changed="menu.selectedNodeChanged(node)"></menu-tree>
+        <menu-tree data-nodes="menu.primaryMenu" data-selected-node-changed="menu.primaryMenuSelected(node)"></menu-tree>
     </div>
-    <div class="menu-container">Secondary</div>
+    <div class="menu-container">
+        <menu-tree data-nodes="menu.secondaryMenu" data-selected-node-changed="menu.secondaryMenuSelected(node)"></menu-tree>
+    </div>
 </div>

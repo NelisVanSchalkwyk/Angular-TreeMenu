@@ -17,7 +17,7 @@
         return service;
 
         function getPrimaryMenu() {
-            return $http.get("/api/menu/primary")
+            return $http.get('/api/menu/primary')
                 .then(getPrimaryMenuCompleted);
 
             function getPrimaryMenuCompleted(result) {
@@ -25,8 +25,8 @@
             }
         }
 
-        function getSecondaryMenu() {
-            return $http.get("/api/menu/secondary")
+        function getSecondaryMenu(id) {
+            return $http.get('/api/menu/secondary/' + id)
                 .then(getSecondaryMenuCompleted);
 
             function getSecondaryMenuCompleted(result) {

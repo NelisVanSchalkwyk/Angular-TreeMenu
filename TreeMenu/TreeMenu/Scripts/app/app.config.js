@@ -44,7 +44,7 @@
                 'main@': {
                     template: function ($stateParams) {
                         if ($stateParams.node) {
-                            return '<strong>' + $stateParams.node.Name + ' selected.</strong>';
+                            return '<strong>' + $stateParams.node.name + ' selected.</strong>';
                         }
                         return '<em>Please select a menu item.</em>';
                     }

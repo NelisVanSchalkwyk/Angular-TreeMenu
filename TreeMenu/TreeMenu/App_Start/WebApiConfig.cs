@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using System.Web.Http;
 
 namespace TreeMenu
@@ -15,6 +16,8 @@ namespace TreeMenu
             config.Formatters.Remove(config.Formatters.XmlFormatter);
             // Ignore null values when serializing to JSON.
             config.Formatters.JsonFormatter.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+            // Use camel case when serializing to JSON.
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

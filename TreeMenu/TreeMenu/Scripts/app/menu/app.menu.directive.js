@@ -28,19 +28,26 @@
                 node.expanded = !node.expanded;
 
                 if (!node.expanded) {
-                    angular.forEach(node.Nodes, function (n) {
+                    angular.forEach(node.nodes, function (n) {
                         n.expanded = false;
                     });
                 }
             };
 
             scope.nodeClicked = scope.nodeClicked || function (node) {
-                angular.forEach(scope.nodes, function (item) {
-                    item.selected = false;
-                });
+                clearSelection(scope.nodes);
 
                 node.selected = true;
                 scope.selectedNodeChanged({ node: node });
+            };
+
+            var clearSelection = function (nodes) {
+                angular.forEach(nodes, function (item) {
+                    item.selected = false;
+                    if (item.nodes.length > 0) {
+                        clearSelection(item.nodes);
+                    }
+                });
             };
         }
     }

@@ -12,7 +12,9 @@
         var vm = this;
 
         vm.primaryMenu = [];
-        vm.selectedNodeChanged = selectedNodeChanged;
+        vm.secondaryMenu = [];
+        vm.primaryMenuSelected = primaryMenuSelected;
+        vm.secondaryMenuSelected = secondaryMenuSelected;
 
         activate();
 
@@ -27,11 +29,19 @@
             });
         }
 
-        function getSecondaryMenu() {
-
+        function getSecondaryMenu(primaryMenuId) {
+            return MenuService.getSecondaryMenu(primaryMenuId).then(function (menu) {
+                vm.secondaryMenu = menu;
+                return vm.secondaryMenu;
+            });
         }
 
-        function selectedNodeChanged(node) {
+        function primaryMenuSelected(node) {
+            $scope.$state.go('content', { node: node });
+            getSecondaryMenu(node.id);
+        }
+
+        function secondaryMenuSelected(node) {
             $scope.$state.go('content', { node: node });
         }
 

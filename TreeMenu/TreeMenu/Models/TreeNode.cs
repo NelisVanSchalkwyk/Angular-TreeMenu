@@ -8,6 +8,9 @@ namespace TreeMenu.Models
     public class TreeNode
     {
         [DataMember]
+        public int ID { get; set; }
+
+        [DataMember]
         public string Name { get; set; }
 
         [DataMember]
@@ -16,6 +19,8 @@ namespace TreeMenu.Models
         [DataMember]
         public IEnumerable<TreeNode> Nodes { get; set; }
 
-        public override string ToString() => $"Name: {Name} | HasChildren: {Nodes.Any()} Route: {Route}";
+        public int? PrimaryNodeID { get; set; }
+
+        public override string ToString() => $"ID: {ID} | Name: {Name} | HasChildren: {Nodes.Any()} Route: {Route} | PrimaryNodeID: {PrimaryNodeID} ";
     }
 }

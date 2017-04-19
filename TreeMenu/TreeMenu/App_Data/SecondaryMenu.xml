@@ -1,21 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<root>
-  <menuItem>
-    <id>1</id>
-    <name>Menu Item 1</name>
-    <parentId></parentId>
-    <route></route>
+<menuItems>
+  <menuItem id="1" name="Sub Menu Item 1" route="" primaryMenuId="1">
+    <menuItem id="3" name="Sub Menu Item 3" route="">
+      <menuItem id="4" name="Sub Menu Item 4" route=""/>
+    </menuItem>
   </menuItem>
-  <menuItem>
-    <id>2</id>
-    <name>Menu Item 2</name>
-    <parentId></parentId>
-    <route></route>
-  </menuItem>
-  <menuItem>
-    <id>3</id>
-    <name>Menu Item 3</name>
-    <parentId>2</parentId>
-    <route></route>
-  </menuItem>
-</root>
+  <menuItem id="2" name="Sub Menu Item 2" route="" primaryMenuId="2"/>
+</menuItems>

@@ -13,6 +13,10 @@ li.tree-node {
     padding-left: 20px;
 }
 
+    li.tree-node span {
+        padding: 2px 5px;
+    }
+
     li.tree-node .expanded {
     }
 
@@ -21,4 +25,9 @@ li.tree-node {
 
     li.tree-node .no-children {
         padding-right: 25px;
+    }
+
+    li.tree-node .selected {
+        background-color: #ccc;
+        border-radius: 2px;
     }
