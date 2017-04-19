@@ -5,7 +5,7 @@ This is Angular JS Tree Menu.  What is a Tree Menu you ask?  Well, in essence it
 _Figure 1_
 
 ## How does it work?
-Data for the menu is provided by XML files.  Web API is used to read the XML and build a strongly typed TreeNode object.  AngularJS is used to retrieve the data from the Web API end points and then display the tree menu via an AngularJS directive. UI-Router is used to set the content of the main view depending on the selected primary or secondary menu item. The current implementation for displaying the content is very simplistic, but you can extend it for a real world scenario.  
+Data for the menu is provided by XML files.  Web API is used to read the XML and build a strongly typed TreeNode object.  AngularJS is used to retrieve the data from the Web API end points and then display the tree menu via an AngularJS directive. UI-Router is used to set the content of the main view depending on the selected primary or secondary menu item. The current implementation for displaying the content is very simplistic, but you can extend it for a real world scenario. *P.S. The route property might be handy...*  
 
 Note that the secondary menu is currently loaded on demand with data beign fetched from Web API when the primary menu item is clicked. For small menu structures this is obviously not necessary and I would suggest that you fetch the complete secondary menu structure beforehand and then filter it client side. For large menu structures the load on demand approach will be more beneficial.
 
