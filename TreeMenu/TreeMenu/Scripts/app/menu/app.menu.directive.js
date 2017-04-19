@@ -14,7 +14,7 @@
             replace: true,
             scope: {
                 nodes: '=',
-                nodeClicked: '&'
+                selectedNodeChanged: '&'
             },
             link: link,
             templateUrl: '/scripts/app/menu/menuTemplate.html'
@@ -32,6 +32,15 @@
                         n.expanded = false;
                     });
                 }
+            };
+
+            scope.nodeClicked = scope.nodeClicked || function (node) {
+                angular.forEach(scope.nodes, function (item) {
+                    item.selected = false;
+                });
+
+                node.selected = true;
+                scope.selectedNodeChanged({ node: node });
             };
         }
     }

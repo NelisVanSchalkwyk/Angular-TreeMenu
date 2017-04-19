@@ -6,13 +6,13 @@
         .module('app.menu')
         .controller('MenuController', MenuController);
 
-    MenuController.$inject = ['$http', '$q', '$log', 'MenuService'];
+    MenuController.$inject = ['$scope', '$http', '$q', '$log', 'MenuService'];
 
-    function MenuController($http, $q, $log, MenuService) {
+    function MenuController($scope, $http, $q, $log, MenuService) {
         var vm = this;
 
         vm.primaryMenu = [];
-        vm.primaryMenuItemClicked = primaryMenuItemClicked;
+        vm.selectedNodeChanged = selectedNodeChanged;
 
         activate();
 
@@ -31,8 +31,9 @@
 
         }
 
-        function primaryMenuItemClicked(item) {
-            $log.debug(item);
+        function selectedNodeChanged(node) {
+            $scope.$state.go('content', { node: node });
         }
+
     }
 })();

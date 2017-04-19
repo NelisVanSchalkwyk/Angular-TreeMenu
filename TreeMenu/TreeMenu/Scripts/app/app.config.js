@@ -36,31 +36,26 @@
         // For any unmatched url, send to /
         $urlRouterProvider.otherwise("/");
 
-        var home = {
+        var content = {
             sticky: true,
-            name: 'home',
+            name: 'content',
             url: '',
             views: {
                 'main@': {
-                    templateUrl: '/home/content'
+                    template: function ($stateParams) {
+                        if ($stateParams.node) {
+                            return '<strong>' + $stateParams.node.Name + ' selected.</strong>';
+                        }
+                        return '<em>Please select a menu item.</em>';
+                    }
                 }
+            },
+            params: {
+                node: {}
             }
         };
 
-        var snapshot = {
-            sticky: true,
-            name: 'snapshot',
-            url: '/snapshot',
-            views: {
-                'main@': {
-                    templateUrl: '/insights'
-                }
-            }
-        };
-
-        $stateProvider
-            .state(home)
-        ;
+        $stateProvider.state(content);
     }
 
     loadGlobalScopeUtilities.$inject = ['$rootScope', '$window', '$state', '$stateParams'];
