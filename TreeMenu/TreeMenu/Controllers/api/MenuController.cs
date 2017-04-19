@@ -5,7 +5,6 @@ using System.Web.Hosting;
 using System.Web.Http;
 using System.Web.Http.Description;
 using System.Xml.Linq;
-using TreeMenu.Extensions;
 using TreeMenu.Models;
 
 namespace TreeMenu.Controllers.api
@@ -35,6 +34,11 @@ namespace TreeMenu.Controllers.api
             return tree.Where(t => t.PrimaryNodeID == id);
         }
 
+        /// <summary>
+        /// Builds a tree structure
+        /// </summary>
+        /// <param name="treeNodes">A list of <see cref="XElement"/> objects.</param>
+        /// <returns>A list of <see cref="TreeNode"/> objects.</returns>
         static IEnumerable<TreeNode> BuildTree(IEnumerable<XElement> treeNodes)
         {
             return treeNodes.Select(n => new TreeNode

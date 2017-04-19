@@ -1,4 +1,4 @@
-﻿(function () {
+﻿; (function () {
     'use strict';
 
     // Define the 'app' module.
@@ -23,5 +23,4 @@
              * Common modules
              */
         ]);
-
 })();

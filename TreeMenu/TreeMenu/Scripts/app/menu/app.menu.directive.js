@@ -1,7 +1,14 @@
 ﻿; (function () {
     'use strict';
 
-    // Define the 'menu' directive.
+    /**
+     * A directive to display a tree view.
+     * @example
+     * // As an element.
+     * <menu-tree data-nodes="[the data]" data-selected-node-changed="[the event handler]"></menu-tree>
+     * // As an attribute.
+     * <div data-menu-tree  data-nodes="[the data]" data-selected-node-changed="[the event handler]"></div>
+     */
     angular
         .module('app.menu')
         .directive('menuTree', MenuTree);
@@ -23,6 +30,9 @@
         return directive;
 
         function link(scope, element, attr) {
+            /*
+             * Toggles whether a node is expanded or not.
+            */
             scope.toggle = function (node, $event) {
                 $event.stopPropagation();
                 node.expanded = !node.expanded;
@@ -34,13 +44,19 @@
                 }
             };
 
-            scope.nodeClicked = scope.nodeClicked || function (node) {
+            /*
+             * Handles the nodeClicked event and sets the node as selected.
+            */
+            scope.nodeClicked = function (node) {
                 clearSelection(scope.nodes);
 
                 node.selected = true;
                 scope.selectedNodeChanged({ node: node });
             };
 
+            /*
+             * Sets the selected property of all the nodes to false.
+             */
             var clearSelection = function (nodes) {
                 angular.forEach(nodes, function (item) {
                     item.selected = false;
