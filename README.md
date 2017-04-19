@@ -67,7 +67,7 @@ The directive can be used as follows:
 ```
 
 ### Running the solution
-You can run this solution by cloning or downloading this reporitory and then opening the TreeMenu.sln file *(see TreeMenu/TreeMenu.sln)* using Visual Studio. The solution includes sample XML data files and will run if you press F5 in Visual Studio.
+You can run this solution by cloning or downloading this repository and then opening the TreeMenu.sln file *(see TreeMenu/TreeMenu.sln)* using Visual Studio. The solution includes sample XML data files and will run if you press F5 in Visual Studio.
 
 ## References
 * [ASP.NET MVC](https://www.asp.net/mvc)
