@@ -43,7 +43,7 @@
             views: {
                 'main@': {
                     template: function ($stateParams) {
-                        if ($stateParams.node) {
+                        if ($stateParams.node && $stateParams.node.name) {
                             return '<strong>' + $stateParams.node.name + ' selected.</strong>';
                         }
                         return '<em>Please select a menu item.</em>';

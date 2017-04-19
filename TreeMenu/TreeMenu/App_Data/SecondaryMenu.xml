@@ -5,5 +5,6 @@
       <menuItem id="4" name="Sub Menu Item 4" route=""/>
     </menuItem>
   </menuItem>
+  <menuItem id="5" name="Sub Menu Item 5" route="" primaryMenuId="1"/>
   <menuItem id="2" name="Sub Menu Item 2" route="" primaryMenuId="2"/>
 </menuItems>
